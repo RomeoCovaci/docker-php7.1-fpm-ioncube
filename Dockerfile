@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-install mcrypt \
 	&& docker-php-ext-install gettext
 
+RUN pecl install mongodb memcache redis \
+	&& docker-php-ext-enable mongodb memcache redis
+
 COPY loader-wizard.php /root/loader-wizard.php
 COPY ioncube_loader_lin_7.1.so /usr/local/lib/php/extensions/no-debug-non-zts-20160303/ioncube_loader_lin_7.1.so
 COPY docker-php-ext-ioncube.ini /usr/local/etc/php/conf.d/docker-php-ext-ioncube.ini
