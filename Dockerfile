@@ -17,4 +17,5 @@ RUN pecl install mongodb redis \
 COPY loader-wizard.php /root/loader-wizard.php
 COPY ioncube_loader_lin_7.1.so /usr/local/lib/php/extensions/no-debug-non-zts-20160303/ioncube_loader_lin_7.1.so
 COPY docker-php-ext-ioncube.ini /usr/local/etc/php/conf.d/docker-php-ext-ioncube.ini
+COPY php-session.ini /usr/local/etc/php/conf.d/php-session.ini
 EXPOSE 8080
