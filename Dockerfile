@@ -9,8 +9,7 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 	&& docker-php-ext-install -j$(nproc) gd \
-	&& docker-php-ext-install mcrypt \
-	&& docker-php-ext-install gettext
+	&& docker-php-ext-install mcrypt gettext pdo pdo_mysql
 
 RUN pecl install mongodb redis \
 	&& docker-php-ext-enable mongodb redis
